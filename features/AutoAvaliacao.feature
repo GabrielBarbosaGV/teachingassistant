@@ -83,4 +83,5 @@ Feature: Auto-avaliação de alunos
     And I see “33”% of students have discrepant evaluations
     And I see student “Adilson” in the discrepant evaluation list
     And change one
+    And change two
     And change three
