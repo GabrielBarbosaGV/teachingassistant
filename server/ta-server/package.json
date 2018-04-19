@@ -4,7 +4,8 @@
   "description": "Servidor do teaching assistant",
   "main": "ta-server.js",
   "scripts": {
-    "test": "jasmine"
+    "test": "jasmine",
+    "tsc": "tsc"
   },
   "author": "Paulo Borba",
   "license": "MIT",
