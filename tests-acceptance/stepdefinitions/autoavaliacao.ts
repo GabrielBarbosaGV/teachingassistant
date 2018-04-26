@@ -15,20 +15,17 @@ const checkSet = {
 	}
 }
 
-function getCheckFunc(pageName: string) {
-	checkSet[pageName];
-}
-
 defineSupportCode(function ({ Given, When, Then}) {
-	Given(/^I am at the "(.*)" page$/, getCheckFunc(pageName));
+	Given(/^I am at the "(.*)" page$/, async (pageName) => {
+		await checkSet[<string> pageName];	
+	});
 
 	When(/^I fill field "(.*)" with "(.*)"$/, async (fieldName, concept) => {
 		await element(by.id(idSet[<string> fieldName])).sendKeys(<string> concept);
 	});
 
 	Then(/^I see the field "(.*)" has "(.*)"$/, async(fieldName, concept) => {
-		var inputText: Promise<string> =
-			element(by.id(idSet[<string> fieldName])).getAttribute('value');
-		await expect(inputText.to.eventually.equal(concept));
+		var inputText = element(by.id(idSet[<string> fieldName])).getAttribute('value');
+		await expect(inputText).to.eventually.equal(concept);
 	});
 });
