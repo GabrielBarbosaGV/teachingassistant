@@ -8,4 +8,4 @@ Given I am at the “Self-Evaluation” page
 When I fill field “Requisitos" with “MPA”
 And I fill field “Gerência de Configuração” with “MA”
 Then I see the field "Requisitos" has "MPA"
-And I see the field "Gerência de Configuração" with "MA"
+And I see the field "Gerência de Configuração" has "MA"
