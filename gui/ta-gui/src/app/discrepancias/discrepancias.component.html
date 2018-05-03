@@ -1,0 +1,20 @@
+<table>
+  <tr>
+   <th>Nome</th>
+   <th>CPF</th>
+   <th>e-mail</th>
+   <th>Requisitos</th>
+   <th>Gerência de Configuração</th>
+  </tr>
+  <tr *ngFor="let a of alunos">
+    <td>{{a.nome}}</td>
+    <td>{{a.cpf}}</td>
+    <td>{{a.email}}</td>
+    <td class="meta">{{ a.metas['requisitos'] }}
+      <br> <input id="reqp" [(ngModel)]="a.metasP['requisitos']"
+        (change)="atualizarAluno(a)"></td>
+    <td class="meta">{{ a.metas['gerDeConfiguracao'] }}
+      <br> <input id="gdcp" [(ngModel)]="a.metasP['gerDeConfiguracao']"
+        (change)="atualizarAluno(a)"></td>
+  </tr>
+</table>
