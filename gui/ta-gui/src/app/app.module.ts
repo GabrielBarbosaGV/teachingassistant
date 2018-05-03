@@ -8,12 +8,14 @@ import { AppComponent } from './app.component';
 import { MetasComponent } from './metas.component';
 import { AlunosComponent } from './alunos.component';
 import { AlunoService } from './aluno.service';
+import { DiscrepanciasComponent } from './discrepancias/discrepancias.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MetasComponent,
-    AlunosComponent
+    AlunosComponent,
+    DiscrepanciasComponent
   ],
   imports: [
     BrowserModule,
@@ -27,6 +29,10 @@ import { AlunoService } from './aluno.service';
       {
         path: 'alunos',
         component: AlunosComponent
+      },
+      {
+        path: 'discrepancias',
+        component: DiscrepanciasComponent
       }
     ])
   ],
